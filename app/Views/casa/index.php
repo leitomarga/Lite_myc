@@ -60,7 +60,11 @@
   <main>
   
 </div>
-<div class="text-center">
+<!--<div class="text-center">
+  <button class="button button1">Habitación</button>
+  <a href="casa/editar" class="btn btn-info">Editar habitación</a> 
+</div>
+<div class="text-center"> -->
 <!-- sintaxis del foreach -->
 <?php if(isset($casas)){
       foreach ($casas as $casa):
@@ -78,18 +82,7 @@
         <div class="text-center">
             <p>No hay habitaciones</p>
         </div>
-    <?php endif; 
-    
-    if(session()->has('color'))
-            {
-                echo session('color');
-            }
-            else 
-            {
-                echo "no funciona";
-            }
-
-    ?>
+    <?php endif; ?>
 <br>
 <div class="text-center">
 <a href=<?php

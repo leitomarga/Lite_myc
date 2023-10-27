@@ -34,7 +34,8 @@ class Casa extends BaseController
         $nombre = $this->request->getPost('nombre_habitacion');
         $color = $this->request->getPost('color_habitacion');
 
-        $color_habitacion = $casa->color_habitacion($color);
+        $casas = $casa->where('id_users', $id_users)->findAll();
+        $data['casas'] = $casas;
 
         $data = array(
             'id_users' => $id_users,
@@ -43,6 +44,7 @@ class Casa extends BaseController
         );
 
         $casa->insert($data);
+        
 
     }
 
