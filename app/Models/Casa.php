@@ -9,5 +9,10 @@ class Casa extends Model{
     protected $primaryKey= 'id_casa';
     protected $allowedFields= ['id_users', 'nombre', 'color'];
 
+    public function color_habitación()
+    {
+        
+    }
+
 }
 ?>

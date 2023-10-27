@@ -58,12 +58,38 @@
     <h1>Tu casa</h1>
   </header>
   <main>
-    
-  <div class="text-center">
-  <button class="button button1">Habitación</button>
-  <a href="casa/editar" class="btn btn-info">Editar habitación</a> 
+  
 </div>
-   
+<div class="text-center">
+<!-- sintaxis del foreach -->
+<?php if(isset($casas)){
+      foreach ($casas as $casa):
+        ?>
+  <div class="text-center">
+    <button class="button button1"><?php echo $casa['nombre']; ?></button>
+  </div>
+  <?php endforeach;} 
+  else {
+    echo "No hay habitaciones";
+  }?>   
+      </div>
+
+      <?php if (isset($noHabitaciones) && $noHabitaciones): ?>
+        <div class="text-center">
+            <p>No hay habitaciones</p>
+        </div>
+    <?php endif; 
+    
+    if(session()->has('color'))
+            {
+                echo session('color');
+            }
+            else 
+            {
+                echo "no funciona";
+            }
+
+    ?>
 <br>
 <div class="text-center">
 <a href=<?php
@@ -72,14 +98,7 @@ echo base_url("casa/crear?idUsuario=" . $idUsuario)?>
  class="btn btn-primary">Agregar habitación</a>
 </div>
 
-    <!-- sintaxis del foreach -->
-    <?php 
-      foreach ($casas as $casa):
-        ?>
-  <div>
-    <h1><?php echo $casa['nombre']; ?></h1>
-  </div>
-  <?php endforeach; ?>
+    
 
   </main>
   <footer>
