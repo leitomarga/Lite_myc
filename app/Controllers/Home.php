@@ -5,7 +5,7 @@ use App\Models\Lite;
 use App\Entities\User;
 use App\Libraries\Hash;
 use CodeIgniter\Email\Email;
-
+echo hola;
 class Home extends BaseController
 {
     private $usuario;
