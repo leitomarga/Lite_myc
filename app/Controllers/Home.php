@@ -9,12 +9,12 @@ use CodeIgniter\Email\Email;
 class Home extends BaseController
 {
     private $usuario;
-    //$session = \Config\Services::session($config);
+
     public function __construct()
     {
-        helper(['url', 'form']);
-        
+        //$this->session = \Config\Services::session();
     }
+
 
     public function index()
     {
@@ -33,11 +33,34 @@ class Home extends BaseController
         helper('cookie');
         $users = new \App\Models\Lite();
         $encrypter = \Config\Services::encrypter();
-        $validation = service('validation');
-        $validation -> setRules([
-            'email' => 'required|valid_email|is_unique[users.email]',
-            'password' => 'required|matches[password]|min_length[10]'
+        $validation = $this->validate([
+            'email' => [
+                'rules' => 'required|valid_email',
+                'errors' => [
+                    'required' => 'Debe ingresar su email',
+                    'valid_email' => 'El email no es válido'
+                ]
+            ],
+            'password' => [
+                'rules' => 'required|min_length[10]|max_length[15]|matches[password]',
+                'errors' => [
+                    'required' => 'Debe ingresar su contraseña',
+                    'min_length' => 'La contraseña es corta, mínimo 10 caracteres',
+                    'max_length' => 'La contraseña es larga, máximo quince caracteres',
+                    'matches[password]' => 'Contraseña incorrecta'
+                ]
+            ]
         ]); 
+
+        
+        $email = $this->request->getPost('email');
+        $usuario = $users->where('email', $email)->first();
+
+        if ($usuario !== null) {
+            $data['validar']['email'] = 'El email está en uso';
+           return view('formulario/form', $data);
+        }
+
         if(!$validation){
             $data['validar'] = $this->validator->getErrors();
            return view('formulario/form', $data);
@@ -56,28 +79,7 @@ class Home extends BaseController
         $db = \Config\Database::connect();
         $lastInsertId = $db->insertID();
 
-        $expiracion = time() + (7 * 24 * 60 * 60);
-
-                    $cookieEmail = [
-                        'name'   => 'email',
-                        'value'  => $email,
-                        'expire' => $expiracion,
-                        'secure' => true 
-                    ];
-
-                    $cookiePassword = [
-                        'name'   => 'password',
-                        'value'  => $password,
-                        'expire' => $expiracion,
-                        'secure' => true 
-                    ];
-
-                    $this->response->setCookie($cookieEmail);
-                    $this->response->setCookie($cookiePassword);
         
-        session()->set('id_users', $lastInsertId);
-        session()->set('email', $email);
-        session()->set('expires', time() + 120);
         
 
 

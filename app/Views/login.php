@@ -127,21 +127,6 @@
                                                     <label for="email">Email:</label>
                                                     <input type="email" id="mail" name="email" placeholder="Ingrese su email">
                                                 </div>
-                                                
-                                                        <?php 
-                                                        if(isset($validar)){
-                                                            foreach($validar as $val){
-                                                            echo $val;
-                                                        }
-                                                        }
-                                                        if(isset($incorrecto))
-                                                        {
-                                                            foreach($incorrecto as $inc)
-                                                            {
-                                                                echo $inc;
-                                                            }
-                                                        }
-                                                        ?>
                                                 <div class="col-sm-6 control-group">
                                                     <label for="password">Contraseña: </label>
                                                     <input type="password" id="pass" name="password" placeholder="Ingrese su contraseña">
@@ -175,24 +160,28 @@
     <div class="user-box">
         <label for="email"></label>
         <input type="email" id="mail" name="email" placeholder="Ingrese su email">
-    </div>
-    
-    <?php 
-        if(isset($validar)){
-                        foreach($validar as $val){
-                        echo $val;
-                        }
-            }
-        if(isset($incorrecto)){
-                foreach($incorrecto as $inc)
-                  {
-                     echo $inc;
-                  }
-            }
-         ?>                                                                                                                 
+    </div>            
+    <div>
+        <span>
+            <?php 
+                if(isset($validar['email'])){
+                    echo $validar['email'];
+                }
+            ?>
+        </span>
+    </div>                                                                                                     
     <div class="user-box">
         <label for="password"> </label>
         <input type="password" id="pass" name="password" placeholder="Ingrese su contraseña">
+    </div>
+    <div>
+        <span>
+            <?php 
+                if(isset($validar['password'])){
+                    echo $validar['password'];
+                }
+            ?>
+        </span>
     </div>
     <div class="user-box">
             <a href="#" id="miBoton">

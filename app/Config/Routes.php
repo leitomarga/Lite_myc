@@ -42,6 +42,7 @@ $routes->get('casa/crear', 'Casa::casa');
 $routes->post('casa/crear/habitacion', 'Casa::habitacion');
 $routes->get('casa/editar', 'Casa::editar_habitacion');
 $routes->get('casa/editar/habitacion', 'Casa::update');
+$routes->get('id', 'Login::id');
 
 
 /*

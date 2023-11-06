@@ -8,13 +8,26 @@ use Firebase\JWT\JWT;
 class Casa extends BaseController
 {
 
+    public function __construct()
+    {
+        //$this->session = \Config\Services::session();
+    }
+
+
     public function index()
     {
+            //session = session();
+
         $casa = new \App\Models\Casa();
-        $idUsuario =  $_GET['idUsuario'];
+    /*$idUsuario =  $_GET['idUsuario'];
         $casas = $casa->where('id_users', $idUsuario)->findAll();
         $data['casas'] = $casas;
-        return view('casa/index', $data);
+        $data['noHabitaciones'] = empty($casas);
+        $idPrueba = session()->get();
+        var_dump( $idPrueba);
+        return view('casa/index', $data);*/
+        echo var_dump(session()->id_users);
+        
     }
 
     public function casa()

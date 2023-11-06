@@ -7,12 +7,12 @@ use App\Models\Lite;
 class Login extends BaseController
 {
 
-    protected $session;
+    //protected $session;
     protected $validation;
 
     public function __construct()
     {
-        $this->session = \Config\Services::session();
+        //$this->session = \Config\Services::session();
         //$this->validation = \Config\Services::validation();
     }
 
@@ -25,7 +25,7 @@ class Login extends BaseController
         public function verificar()
     {
         
-        $session = session();
+//$session = session();
 
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
@@ -43,8 +43,8 @@ class Login extends BaseController
                 'rules' => 'required|min_length[10]|max_length[15]|matches[password]',
                 'errors' => [
                     'required' => 'Debe ingresar su contraseña',
-                    'min_length' => 'Contraseña incorrecta',
-                    'max_length' => 'Contraseña incorrecta',
+                    'min_length' => 'La contraseña es corta',
+                    'max_length' => 'La contraseña es larga',
                     'matches[password]' => 'Contraseña incorrecta'
                 ]
             ]
@@ -68,36 +68,44 @@ class Login extends BaseController
                     $idUsuario = $usuario['id_users'];
                     $data['idUsuario'] = $idUsuario;
 
-                    session()->set('id_users', $idUsuario);
+                    /*session()->set('id_users', $idUsuario);
                     session()->set('email', $email);
-                    session()->set('expires', time() + 120);
+                    session()->set('expires', time() + 120);*/
                     //return view('login/sesion', $data);
-
-                    if (session('expires') < time()) {
+                    //$idPrueba = session()->get();
+                    //echo var_dump(session()->get());
+                    $sessiondata = [
+                        'email'     => $email,
+                        'logged_in' => true,
+                        'expires' => time() + 120,
+                        'id_users' => $idUsuario,
+                    ];
+                    
+                    session()->set($sessiondata);   
+                    if (session()->expires < time()) {
                         // La sesión ha expirado, redirige a la página de inicio de sesión o realiza alguna acción
                         return redirect()->to('login/logout');
-                    }
-                    else
-                    {
-                        return view('login/sesion', $data);
-                        echo "todo bien";
+                    }else{
+                        return view('login/sesion'); //preguntar sobre redireccion de vista, deberia redirigir a funcion 
+                        //echo "todo bien";
                     }
                     //echo $idUsuario;
+                    echo var_dump(session()->get());
                 } else {
-                    $data['validar'] = $this->validator->getErrors();
-            return view('login', $data);
+                    $data['validar']['password'] = "Contraseña incorrecta";
+                    return view('login', $data);
                 }
             } else {
-                $data['validar'] = $this->validator->getErrors();
-            return view('login', $data);
+                $data['validar']['email'] = "El email no existe";
+                return view('login', $data);
             }
-                }
-                if (session()->has('logged') && session('logged') === true) {
-                    echo "Bienvenido a la página principal";
-                } else {
-                    $data['validar'] = $this->validator->getErrors();
+        }
+        if (session()->has('logged') && session('logged') === true) {
+            echo "Bienvenido a la página principal";
+        } else {
+            $data['validar'] = $this->validator->getErrors();
             return view('login', $data);
-                }
+        }          
     }
 
         public function id()
@@ -112,17 +120,18 @@ class Login extends BaseController
                 } else {
                     echo "No se encontró el ID del usuario";
                 }
+                echo $email;
         }
 
         
 
         
-        public function logout()
+       /* public function logout()
         {
             $_SESSION['logged'] = '0';
             session()->destroy();
             return view('inicio');
-        }
+        }*/
         
         public function nose()
         {

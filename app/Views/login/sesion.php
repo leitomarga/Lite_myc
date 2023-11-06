@@ -42,7 +42,7 @@
             }
         ?>
         
-        <a href="<?php echo base_url('casa?idUsuario='.$idUsuario )?>">Casa</a>
+        <a href="<?php echo base_url('casa')?>">Casa</a>
         <a href="logout">Cerrar sesión</a>
                 <div class="sidebar-menu">
                 <a href="#" class="sidebar-menu__link active">Design</a>
