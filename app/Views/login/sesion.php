@@ -40,6 +40,7 @@
             {
                 echo "no funciona";
             }
+            
         ?>
         
         <a href="<?php echo base_url('casa')?>">Casa</a>

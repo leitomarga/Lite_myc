@@ -2,9 +2,9 @@
 
 namespace App\Controllers;
 use App\Models\Lite;
-use App\Entities\User;
 use App\Libraries\Hash;
-use CodeIgniter\Email\Email;
+use Config\Services;
+
 
 class Home extends BaseController
 {

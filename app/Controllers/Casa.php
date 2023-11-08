@@ -26,7 +26,16 @@ class Casa extends BaseController
         $idPrueba = session()->get();
         var_dump( $idPrueba);
         return view('casa/index', $data);*/
-        echo var_dump(session()->id_users);
+        echo var_dump(session()->get());
+        /*if (session()->logged_in==true) {
+            $data['idUsuario'] = session('id_users');
+            $data['email'] = session('email');
+
+            return view('casa/index', $data);
+        } else {
+            echo "No";
+        }*/
+
         
     }
 

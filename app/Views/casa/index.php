@@ -66,20 +66,17 @@
    
 <br>
 <div class="text-center">
-<a href=<?php
-$idUsuario = $_GET['idUsuario'];
-echo base_url("casa/crear?idUsuario=" . $idUsuario)?>
- class="btn btn-primary">Agregar habitación</a>
+    
 </div>
 
     <!-- sintaxis del foreach -->
     <?php 
-      foreach ($casas as $casa):
+      //foreach ($casas as $casa):
         ?>
   <div>
-    <h1><?php echo $casa['nombre']; ?></h1>
+    <h1><?php //echo $casa['nombre']; ?></h1>
   </div>
-  <?php endforeach; ?>
+  <?php //endforeach; ?>
 
   </main>
   <footer>

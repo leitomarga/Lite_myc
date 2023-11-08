@@ -27,7 +27,7 @@ class Cookie extends BaseConfig
      *
      * @var DateTimeInterface|int|string
      */
-    public $expires = 120;
+    public $expires = 0;
 
     /**
      * --------------------------------------------------------------------------
@@ -36,7 +36,7 @@ class Cookie extends BaseConfig
      *
      * Typically will be a forward slash.
      */
-    public string $path = '/login';
+    public string $path = '/';
 
     /**
      * --------------------------------------------------------------------------
@@ -45,7 +45,7 @@ class Cookie extends BaseConfig
      *
      * Set to `.your-domain.com` for site-wide cookies.
      */
-    public string $domain = 'localhost/Lite_myc/public';
+    public string $domain = '';
 
     /**
      * --------------------------------------------------------------------------
@@ -54,7 +54,7 @@ class Cookie extends BaseConfig
      *
      * Cookie will only be set if a secure HTTPS connection exists.
      */
-    public bool $secure = true;
+    public bool $secure = false;
 
     /**
      * --------------------------------------------------------------------------
@@ -84,6 +84,8 @@ class Cookie extends BaseConfig
      * Defaults to `Lax` for compatibility with modern browsers. Setting `''`
      * (empty string) means default SameSite attribute set by browsers (`Lax`)
      * will be set on cookies. If set to `None`, `$secure` must also be set.
+     *
+     * @phpstan-var 'None'|'Lax'|'Strict'|''
      */
     public string $samesite = 'Lax';
 

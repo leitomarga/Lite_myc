@@ -36,6 +36,7 @@ $routes->post('prueba', 'Home::prueba');
 $routes->get('login', 'Login::index');
 $routes->post('login/verificar', 'Login::verificar');   
 $routes->get('login/logout', 'Login::logout');
+$routes->get('login/nose', 'Login::nose');
 
 $routes->get('casa', 'Casa::index');
 $routes->get('casa/crear', 'Casa::casa');

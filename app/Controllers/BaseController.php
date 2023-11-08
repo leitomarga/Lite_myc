@@ -35,7 +35,7 @@ abstract class BaseController extends Controller
      *
      * @var array
      */
-    protected $helpers = ['cookies'];
+    protected $helpers = [];
 
     /**
      * Be sure to declare properties for any property fetch you initialized.
@@ -44,7 +44,7 @@ abstract class BaseController extends Controller
     // protected $session;
 
     /**
-     * Constructor.
+     * @return void
      */
     public function initController(RequestInterface $request, ResponseInterface $response, LoggerInterface $logger)
     {
@@ -52,6 +52,7 @@ abstract class BaseController extends Controller
         parent::initController($request, $response, $logger);
 
         // Preload any models, libraries, etc, here.
-        //$this->session = \Config\Services::session();
+
+        // E.g.: $this->session = \Config\Services::session();
     }
 }

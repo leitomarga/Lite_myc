@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\Lite;
+//use Config\Services;
 
 
 class Login extends BaseController
@@ -81,16 +82,20 @@ class Login extends BaseController
                         'id_users' => $idUsuario,
                     ];
                     
-                    session()->set($sessiondata);   
+                    session()->set($sessiondata); 
+                      
                     if (session()->expires < time()) {
                         // La sesión ha expirado, redirige a la página de inicio de sesión o realiza alguna acción
+                        echo "hola";
+                            
                         return redirect()->to('login/logout');
                     }else{
-                        return view('login/sesion'); //preguntar sobre redireccion de vista, deberia redirigir a funcion 
+                        echo "chau";
+                        return redirect()->to('login/nose'); //preguntar sobre redireccion de vista, deberia redirigir a funcion 
                         //echo "todo bien";
                     }
                     //echo $idUsuario;
-                    echo var_dump(session()->get());
+                    //echo var_dump(session()->get());
                 } else {
                     $data['validar']['password'] = "Contraseña incorrecta";
                     return view('login', $data);
@@ -104,7 +109,7 @@ class Login extends BaseController
             echo "Bienvenido a la página principal";
         } else {
             $data['validar'] = $this->validator->getErrors();
-            return view('login', $data);
+            //return view('login', $data);
         }          
     }
 
@@ -126,18 +131,16 @@ class Login extends BaseController
         
 
         
-       /* public function logout()
+       public function logout()
         {
             $_SESSION['logged'] = '0';
             session()->destroy();
             return view('inicio');
-        }*/
+        }
         
         public function nose()
         {
-            $home = new App\Controllers\Home;
-            $home->prueba($email);
-            return view('login/sesion, $home');
+            return view('login/sesion');
         }
             
 }
