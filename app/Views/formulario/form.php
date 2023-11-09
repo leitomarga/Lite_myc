@@ -156,7 +156,20 @@
     </header>
     <div class="login-box">
   <h2>Registrate</h2>
-  <form method="POST" id="miformulario" action="<?php echo base_url('prueba');?>">
+  <form method="POST" id="miformulario" action="<?php echo base_url('prueba'); ?>">
+  <div class="user-box">
+        <label for="name"> </label>
+        <input type="text" id="name" name="name" placeholder="Ingrese su nombre">
+    </div>
+    <div>
+        <span>
+            <?php 
+                if(isset($validar['name'])){
+                    echo $validar['name'];
+                }
+            ?>
+        </span>
+    </div>
     <div class="user-box">
         <label for="email"></label>
         <input type="email" id="mail" name="email" placeholder="Ingrese su email">

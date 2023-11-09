@@ -14,8 +14,7 @@
                 <div class="sidebar">
                 <div class="user">
                 
-                <div class="user-name">Alexander</div>
-                <div class="user-mail">alexander@email.com</div>
+                <div class="user-name"><p>Bienvenido, <?php echo $username; ?>!</p></div>
                 </div>
                 <?php 
             if(isset ($idUsuario))

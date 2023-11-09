@@ -32,7 +32,7 @@ class Home extends BaseController
     {
         helper('cookie');
         $users = new \App\Models\Lite();
-        $encrypter = \Config\Services::encrypter();
+        //$encrypter = \Config\Services::encrypter();
         $validation = $this->validate([
             'email' => [
                 'rules' => 'required|valid_email',
@@ -49,6 +49,13 @@ class Home extends BaseController
                     'max_length' => 'La contraseña es larga, máximo quince caracteres',
                     'matches[password]' => 'Contraseña incorrecta'
                 ]
+            ],
+            'name' => [
+                'rules' => 'required|max_length[30]',
+                'errors' => [
+                    'required' => 'Debe ingresar su nombre',
+                    'max_length' => 'El nombre no debe exceder los 30 caracteres'
+                ]    
             ]
         ]); 
 
@@ -65,23 +72,17 @@ class Home extends BaseController
             $data['validar'] = $this->validator->getErrors();
            return view('formulario/form', $data);
         }else{
+            $name = $this->request->getPost('name');
             $email = $this->request->getPost('email');
-            $password = $this->request->getPost('password'); 
+            $password = $this->request->getPost('password');
             
         $data=[
+            "name" => $name,
             "email" => $email,
             "password" => password_hash($password, PASSWORD_DEFAULT)
               ];
               
-
         $users->insert($data);
-
-        $db = \Config\Database::connect();
-        $lastInsertId = $db->insertID();
-
-        
-        
-
 
         return redirect()->route('login')->with('msg', 'el usuario fue registrado con exito, inicie sesion');
         }

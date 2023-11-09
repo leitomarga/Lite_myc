@@ -25,9 +25,6 @@ class Login extends BaseController
 
         public function verificar()
     {
-        
-//$session = session();
-
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
         $logged = true;
@@ -62,19 +59,12 @@ class Login extends BaseController
 
             if ($usuario !== null) {
                 $hashedPassword = $usuario['password'];
-                //$session->set('user_id', $idUsuario);
 
                 if (password_verify($password, $hashedPassword)){
                 
                     $idUsuario = $usuario['id_users'];
                     $data['idUsuario'] = $idUsuario;
 
-                    /*session()->set('id_users', $idUsuario);
-                    session()->set('email', $email);
-                    session()->set('expires', time() + 120);*/
-                    //return view('login/sesion', $data);
-                    //$idPrueba = session()->get();
-                    //echo var_dump(session()->get());
                     $sessiondata = [
                         'email'     => $email,
                         'logged_in' => true,
@@ -85,17 +75,17 @@ class Login extends BaseController
                     session()->set($sessiondata); 
                       
                     if (session()->expires < time()) {
-                        // La sesión ha expirado, redirige a la página de inicio de sesión o realiza alguna acción
+
                         echo "hola";
-                            
                         return redirect()->to('login/logout');
+
                     }else{
+
                         echo "chau";
-                        return redirect()->to('login/nose'); //preguntar sobre redireccion de vista, deberia redirigir a funcion 
-                        //echo "todo bien";
+                        return redirect()->to('login/nose'); 
+
                     }
-                    //echo $idUsuario;
-                    //echo var_dump(session()->get());
+
                 } else {
                     $data['validar']['password'] = "Contraseña incorrecta";
                     return view('login', $data);
@@ -109,7 +99,7 @@ class Login extends BaseController
             echo "Bienvenido a la página principal";
         } else {
             $data['validar'] = $this->validator->getErrors();
-            //return view('login', $data);
+
         }          
     }
 
@@ -140,7 +130,13 @@ class Login extends BaseController
         
         public function nose()
         {
-            return view('login/sesion');
+            $users = new \App\Models\Lite();
+
+            $id = session()->get('id_users');
+            $username = $users->getUser($id);
+            
+            return view('login/sesion', ['username' => $username]);
+
         }
             
 }
