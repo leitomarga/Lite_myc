@@ -10,6 +10,8 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    
+
 </head>
  
 <body>
@@ -17,7 +19,7 @@
 <h1>Agregar Habitación</h1>    
   </header>
   <main>
-  <?php $idUsuario =  $_GET['idUsuario'];?>
+  <?php $idUsuario = session('id_users'); ?>
     <form method ="POST" action="<?php echo base_url('casa/crear/habitacion'); ?>">
         <label for="nombre_habitacion">
           <p> Nombre de habitación: </p>

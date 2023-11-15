@@ -16,31 +16,6 @@
                 
                 <div class="user-name"><p>Bienvenido, <?php echo $username; ?>!</p></div>
                 </div>
-                <?php 
-            if(isset ($idUsuario))
-            {
-                echo $idUsuario;
-            }
-
-            if(session()->has('id_users'))
-            {
-                echo session('id_users');
-            }
-            else 
-            {
-                echo "no funciona";
-            }
-
-            if(session()->has('email'))
-            {
-                echo session('email');
-            }
-            else 
-            {
-                echo "no funciona";
-            }
-            
-        ?>
         
         <a href="<?php echo base_url('casa')?>">Casa</a>
         <a href="logout">Cerrar sesión</a>

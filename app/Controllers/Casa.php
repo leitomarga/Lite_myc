@@ -8,40 +8,25 @@ use Firebase\JWT\JWT;
 class Casa extends BaseController
 {
 
-    public function __construct()
-    {
-        //$this->session = \Config\Services::session();
-    }
-
-
     public function index()
-    {
-            //session = session();
+{
+    $idUsuario = session('id_users');
+    $casa = new \App\Models\Casa();
+    $habitaciones = $casa->getHabitacion($idUsuario);
+    
+    $data = ['habitaciones' => $habitaciones];
 
-        $casa = new \App\Models\Casa();
-    /*$idUsuario =  $_GET['idUsuario'];
-        $casas = $casa->where('id_users', $idUsuario)->findAll();
-        $data['casas'] = $casas;
-        $data['noHabitaciones'] = empty($casas);
-        $idPrueba = session()->get();
-        var_dump( $idPrueba);
-        return view('casa/index', $data);*/
-        echo var_dump(session()->get());
-        /*if (session()->logged_in==true) {
-            $data['idUsuario'] = session('id_users');
-            $data['email'] = session('email');
-
-            return view('casa/index', $data);
-        } else {
-            echo "No";
-        }*/
-
-        
+    if (empty($habitaciones)) {
+        $data['mensaje'] = 'No hay habitaciones disponibles.';
     }
+
+    return view('casa/index', $data);   
+}
 
     public function casa()
     {
         return view('casa/crear');
+        
     }
 
     public function habitacion()
@@ -61,9 +46,20 @@ class Casa extends BaseController
 
         $casa->insert($data);
 
+        $casa = new \App\Models\Casa();
+        $habitaciones = $casa->getHabitacion($id_users);
+        
+        $data = ['habitaciones' => $habitaciones];
+    
+        if (empty($habitaciones)) {
+            $data['mensaje'] = 'No hay habitaciones disponibles.';
+        }
+
+        return redirect()->to('casa');
+
     }
 
-    public function editar_habitacion()
+    public function editar()
     {
         return view('casa/editar');
     }
