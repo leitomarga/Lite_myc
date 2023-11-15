@@ -41,7 +41,8 @@ $routes->get('login/nose', 'Login::nose');
 $routes->get('casa', 'Casa::index');
 $routes->get('casa/crear', 'Casa::casa');
 $routes->post('casa/crear/habitacion', 'Casa::habitacion');
-$routes->get('casa/editar', 'Casa::editar_habitacion');
+$routes->get('casa/editar/(:num)', 'Casa::editar/$1');
+$routes->post('casa/update/(:num)', 'Casa::update/$1');
 $routes->get('casa/editar/habitacion', 'Casa::update');
 $routes->get('id', 'Login::id');
 

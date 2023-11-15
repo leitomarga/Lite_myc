@@ -63,7 +63,7 @@
                     <button class="habitacion-button" style="background-color: <?php echo $habitacion->color; ?>;">
                         <?php echo $habitacion->nombre; ?>
                     </button>
-                    <a href="<?php echo base_url("casa_update") ?>" style="margin-bottom: 10px;">Editar nombre</a>
+                    <a href="<?php echo base_url("casa/editar/{$habitacion->id_casa}"); ?>">Editar nombre</a>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>

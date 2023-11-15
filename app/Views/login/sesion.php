@@ -14,7 +14,7 @@
                 <div class="sidebar">
                 <div class="user">
                 
-                <div class="user-name"><p>Bienvenido, <?php echo $username; ?>!</p></div>
+                <!-- <div class="user-name"><p>Bienvenido, <?php // echo $username; ?>!</p></div> -->
                 </div>
         
         <a href="<?php echo base_url('casa')?>">Casa</a>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="main">
                 <div class="main-header">
-                <div class="main-header__title"><h1>Bienvenido a L.I.T.E</h1></div>
+                <div class="main-header__title"><h1>¡<?php echo $username; ?>! Bienvenido a L.I.T.E</h1></div>
                 <!--<div class="main-header__avatars">
                     <img class="main-header__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="avatar">
                     <img class="main-header__avatar" src="https://images.unsplash.com/photo-1683392969197-17547ac3e06e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="avatar">

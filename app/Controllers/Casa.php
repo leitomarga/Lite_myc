@@ -13,7 +13,7 @@ class Casa extends BaseController
     $idUsuario = session('id_users');
     $casa = new \App\Models\Casa();
     $habitaciones = $casa->getHabitacion($idUsuario);
-    
+
     $data = ['habitaciones' => $habitaciones];
 
     if (empty($habitaciones)) {
@@ -59,14 +59,39 @@ class Casa extends BaseController
 
     }
 
-    public function editar()
+    public function editar($idCasa)
     {
-        return view('casa/editar');
+        $idUsuario = session('id_users');
+        $data['idCasa'] = $idCasa;
+
+        $casa = new \App\Models\Casa();
+        $consulta = $casa->getCasa($idCasa, $idUsuario);
+
+        if(empty($consulta))
+        {
+            return redirect()->to('casa/index')->with('mensaje', 'No tienes permiso para editar esta casa.');
+        }
+
+        $datosVista = [
+            'data' => $data,
+            'consulta' => $consulta
+        ];
+
+        return view('casa/editar', $datosVista);
+
     }
 
-    public function update()
+    public function update($idCasa)
     {
-        
+         
+         $nuevoNombre = $this->request->getPost('nombre_habitacion');
+         $nuevoColor = $this->request->getPost('color_habitacion');
+ 
+         $casa = new \App\Models\Casa();
+         $casa->updateNombre($idCasa, $nuevoNombre);
+         $casa->updateColor($idCasa, $nuevoColor);
+
+         return redirect()->to('casa')->with('mensaje', 'Casa actualizada exitosamente.');
     }
    
 }
