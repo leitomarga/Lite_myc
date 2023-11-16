@@ -20,22 +20,26 @@
                 <!-- <div class="user-name"><p>Bienvenido, <?php // echo $username; ?>!</p></div> -->
                 </div>
                 <div class="btn-group-vertical">
-                    <a name="" id="" class="btn btn-dark" href="<?php echo base_url('casa')?>" role="button">casa</a>
-                    <a name="" id="" class="btn btn-primary" href="logout" role="button">Cerrar sesión</a>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
-                    <a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
-</div>
+                    
+                        <a name="" id="" class="btn" href="<?php echo base_url('casa')?>" role="button">Tu hogar</a>
+                        <a name="" id="" class="btn" href="logout" role="button">Cerrar sesión</a>
+                        <a name="" id="" class="btn" href="#" role="button">Vincula tu dispositivo</a>
+                        <a name="" id="" class="btn" href="#" role="button">Sobre el producto</a>
+                        <a name="" id="" class="btn" href="#" role="button">Manual de usuario</a>
+
+                </div>
                  
 
                 <div class="sidebar-menu">
-                <a href="#" class="sidebar-menu__link active">Vincula tu dispositivo</a>
-                <a href="#" class="sidebar-menu__link">Sobre el producto</a>
-                <a href="#" class="sidebar-menu__link">Manual de usuario</a>
+                <a href="#" class="sidebar-menu__link active"></a>
+                <a href="#" class="sidebar-menu__link"></a>
+                <a href="#" class="sidebar-menu__link"></a>
                 
                 </div>
                 <label class="toggle">
                 <input type="checkbox">
-                <span class="slider"></span>
+                <!--
+                <span class="slider"></span>-->
                 </label>
                 </div>
                 <div class="main">
