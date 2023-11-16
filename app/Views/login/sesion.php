@@ -5,6 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
            <!-- Customized Bootstrap Stylesheet -->
     <link href="<?php echo base_url('css/style3.css');?>" rel="stylesheet">
     <script src="<?php echo base_url('css/jiji2.js');?>"></script>
@@ -16,16 +19,19 @@
                 
                 <!-- <div class="user-name"><p>Bienvenido, <?php // echo $username; ?>!</p></div> -->
                 </div>
-        
-        <a href="<?php echo base_url('casa')?>">Casa</a>
-        <a href="logout">Cerrar sesión</a>
+                <div class="btn-group-vertical">
+                    <a name="" id="" class="btn btn-dark" href="<?php echo base_url('casa')?>" role="button">casa</a>
+                    <a name="" id="" class="btn btn-primary" href="logout" role="button">Cerrar sesión</a>
+                    <a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
+                    <a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
+</div>
+                 
+
                 <div class="sidebar-menu">
-                <a href="#" class="sidebar-menu__link active">Design</a>
-                <a href="#" class="sidebar-menu__link">Barbeque</a>
-                <a href="#" class="sidebar-menu__link">Productivity</a>
-                <a href="#" class="sidebar-menu__link">Workout</a>
-                <a href="#" class="sidebar-menu__link">Book</a>
-                <a href="#" class="sidebar-menu__link">Snack</a>
+                <a href="#" class="sidebar-menu__link active">Vincula tu dispositivo</a>
+                <a href="#" class="sidebar-menu__link">Sobre el producto</a>
+                <a href="#" class="sidebar-menu__link">Manual de usuario</a>
+                
                 </div>
                 <label class="toggle">
                 <input type="checkbox">
