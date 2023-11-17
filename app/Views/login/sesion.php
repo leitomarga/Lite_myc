@@ -52,6 +52,7 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg></button>
                 </div>
+
                 <div class="row">
   <div class="col-md-6">
     <div class="card" style="width: 30rem; height:35rem; color:white; background-color:black; padding:10px;">
@@ -77,11 +78,16 @@
     </div>
   </div>
 </div>
-                    
-                
-
-       
-
+                 <!--<div class="card" style="width: 10rem; background-color:black; color:white;">
+                    <img src="<?php //echo base_url('img/prueba.svg');?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>-->
+                </div>
+                </div>
+            
 
     </body>
     </html>
