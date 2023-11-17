@@ -16,7 +16,7 @@
              <div class="app">
                 <div class="sidebar">
                 <div class="user">
-                
+                <h2>¡<?php echo $username; ?>! Bienvenido a L.I.T.E</h2>
                 <!-- <div class="user-name"><p>Bienvenido, <?php // echo $username; ?>!</p></div> -->
                 </div>
                 <div class="btn-group-vertical">
@@ -44,7 +44,7 @@
                 </div>
                 <div class="main">
                 <div class="main-header">
-                <div class="main-header__title"><h1>¡<?php echo $username; ?>! Bienvenido a L.I.T.E</h1></div>
+                <div class="main-header__title"></div>
                 <!--<div class="main-header__avatars">
                     <img class="main-header__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="avatar">
                     <img class="main-header__avatar" src="https://images.unsplash.com/photo-1683392969197-17547ac3e06e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="avatar">
@@ -52,25 +52,33 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg></button>
                 </div>
+                <div class="row">
+  <div class="col-md-6">
+    <div class="card" style="width: 30rem; height:35rem; color:white; background-color:black; padding:10px;">
+      <img src="<?php echo base_url('img/prueba.svg');?>" class="img-thumbnail" style="width:18rem; background-color:black; border-color:black; float:right;" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Hagamos un cambio!</h5>
+        <p class="card-text">¿Sabias que un 80% de la energía que consumimos viene de combustibles fosiles? Y estos son responsables de la mayor cantidad de emisión de CO2</p>
+        <a href="#" class="btn btn-outline-light">Cuentame más</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card" style="width: 50rem; color:white; background-color:black; padding:10px;"">
+      <div class="card-header" style="color:#109786;">
+        20% OFF en tu primera compra
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Accedé a nuestros servicios y cuida tu bolsillo $$$</h5>
+        <img src="<?php echo base_url('img/prueba2.svg');?>" class="img-thumbnail" style="width:10rem; background-color:black; border-color:black; float:right;" alt="...">
+        <p class="card-text">Con nuestro dispositivo, puedes reducir tu consumo de energía hasta en un 20%. Esto significa que estarás contribuyendo a la protección del medioambiente y ahorrando dinero en tus facturas. </p>
+        <a href="#" class="btn btn-outline-success">Go somewhere</a>
+      </div>
+    </div>
+  </div>
+</div>
+                    
                 
-                </div>
-                <div class="main-header-nav">
-                    <a href="#" class="nav-item active">All</a>
-                    <a href="#" class="nav-item">Videos</a>
-                    <a href="#" class="nav-item">Notes</a>
-                    <a href="#" class="nav-item">Music</a>
-                    <a href="#" class="nav-item">To-do list</a>
-                </div>
-                <div class="main-content">
-                <div class="card card-2 card-img"></div>
-                <div class="card card-3 card-img"></div>
-                    <div class="card card-img card-1 card-main"></div>
-                <div class="card card-4 card-img"></div>
-                <div class="card card-img card-5"></div>
-                <div class="card card-6 card-img"></div>
-                </div>
-                </div>
-                </div>
 
        
 
