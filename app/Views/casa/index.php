@@ -56,6 +56,8 @@
             <a href="casa/crear" class="btn btn-info">Agregar habitación</a>
         </div>
         <div>
+            <br>
+            <br>
             <?php if (isset($mensaje)): ?>
                 <p><?php echo $mensaje; ?></p>
             <?php else: ?>
@@ -63,14 +65,15 @@
                     <button class="habitacion-button" style="background-color: <?php echo $habitacion->color; ?>;">
                         <?php echo $habitacion->nombre; ?>
                     </button>
-                    <a href="<?php echo base_url("casa/editar/{$habitacion->id_casa}"); ?>">Editar nombre</a>
+                    <a href="<?php echo base_url("casa/editar/{$habitacion->id_casa}"); ?>">Editar</a>
+                    <a href="<?php echo base_url("casa/eliminar/{$habitacion->id_casa}"); ?>">Eliminar</a>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>
     </div>
     </div>
 
-
+<!--hoa-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>

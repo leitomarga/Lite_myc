@@ -55,5 +55,28 @@ class Casa extends Model{
         $this->update();
     }
 
+    public function getEliminar($idCasa, $idUsuario)
+    {
+        return $this->where('id_casa', $idCasa)
+                    ->where('id_users', $idUsuario)
+                    ->first();
+    }
+
+    public function eliminar($idCasa)
+{
+
+    $casa = $this->find($idCasa);
+
+    if (empty($casa)) {
+
+        return false;
+    
+    }
+
+    $this->delete($idCasa);
+    
+    return true; 
+}
+
 }
 ?>

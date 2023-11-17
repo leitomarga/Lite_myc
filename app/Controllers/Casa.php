@@ -17,7 +17,7 @@ class Casa extends BaseController
     $data = ['habitaciones' => $habitaciones];
 
     if (empty($habitaciones)) {
-        $data['mensaje'] = 'No hay habitaciones disponibles.';
+        $data['mensaje'] = 'No hay habitaciones.';
     }
 
     return view('casa/index', $data);   
@@ -69,16 +69,18 @@ class Casa extends BaseController
 
         if(empty($consulta))
         {
-            return redirect()->to('casa/index')->with('mensaje', 'No tienes permiso para editar esta casa.');
+            return redirect()->to('casa/index')->with('mensaje', 'No tenés permiso para editar esta casa.');
         }
+        else{
 
-        $datosVista = [
-            'data' => $data,
-            'consulta' => $consulta
-        ];
-
-        return view('casa/editar', $datosVista);
-
+            $datosVista = [
+                'data' => $data,
+                'consulta' => $consulta
+            ];
+    
+            return view('casa/editar', $datosVista);
+    
+        }        
     }
 
     public function update($idCasa)
@@ -91,19 +93,27 @@ class Casa extends BaseController
          $casa->updateNombre($idCasa, $nuevoNombre);
          $casa->updateColor($idCasa, $nuevoColor);
 
-         return redirect()->to('casa')->with('mensaje', 'Casa actualizada exitosamente.');
+         return redirect()->to('casa');
     }
-   
-}
 
-
-
-
-    /*public function index()
+    public function eliminar($idCasa)
     {
-        return view('sesion/lite');
-    }*/
+        $idUsuario = session('id_users');
 
+        $casa = new \App\Models\Casa();
+        $consulta = $casa->getEliminar($idCasa, $idUsuario);
 
+        if (empty($consulta)) {
+            return redirect()->to('casa/index')->with('mensaje', 'No se pudo eliminar esta casa.');
+        }
+        else
+        {
+            $casa->eliminar($idCasa);
+
+            return redirect()->to('casa');
+        }
+    }
+
+}
 
 ?>

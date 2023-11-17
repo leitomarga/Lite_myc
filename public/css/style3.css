@@ -6,14 +6,14 @@
 }
 
 :root {
- --theme-bg-color: #0e0e0e;
+ --theme-bg-color: #000000;
  --theme-color: #fff;
  --theme-inactive-color: #5c5c5c;
  --body-font: "Poppins", sans-serif;
  --border-color: #252424;
- --card-color: #131a1a;
+ --card-color: #000000;
 }
-
+ 
 body {
  display: flex;
  flex-direction: column;

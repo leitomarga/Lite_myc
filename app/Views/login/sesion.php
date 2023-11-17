@@ -44,7 +44,7 @@
                 </div>
                 <div class="main">
                 <div class="main-header">
-                <div class="main-header__title"><h1>¡<?php echo $username; ?>! Bienvenido a L.I.T.E</h1></div>
+                <div class="main-header__title"><h1>¡<?php echo $username; ?>! Bienvenide a L.I.T.E</h1></div>
                 <!--<div class="main-header__avatars">
                     <img class="main-header__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="avatar">
                     <img class="main-header__avatar" src="https://images.unsplash.com/photo-1683392969197-17547ac3e06e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80" alt="avatar">
@@ -52,7 +52,14 @@
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg></button>
                 </div>
-                
+                 <!--<div class="card" style="width: 10rem; background-color:black; color:white;">
+                    <img src="<?php //echo base_url('img/prueba.svg');?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>-->
+                </div>
                 </div>
                 <div class="main-header-nav">
                     <a href="#" class="nav-item active">All</a>
@@ -61,16 +68,7 @@
                     <a href="#" class="nav-item">Music</a>
                     <a href="#" class="nav-item">To-do list</a>
                 </div>
-                <div class="main-content">
-                <div class="card card-2 card-img"></div>
-                <div class="card card-3 card-img"></div>
-                    <div class="card card-img card-1 card-main"></div>
-                <div class="card card-4 card-img"></div>
-                <div class="card card-img card-5"></div>
-                <div class="card card-6 card-img"></div>
-                </div>
-                </div>
-                </div>
+               
 
        
 
