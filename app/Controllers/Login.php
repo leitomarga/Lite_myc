@@ -91,7 +91,7 @@ class Login extends BaseController
                     return view('login', $data);
                 }
             } else {
-                $data['validar']['email'] = "El email no existe";
+                $data['validar']['email'] = "El email no existe, por favor registrese";
                 return view('login', $data);
             }
         }

@@ -34,7 +34,7 @@ $routes->get('registrar', 'Home::registrar');
 $routes->post('prueba', 'Home::prueba');
 
 $routes->get('login', 'Login::index');
-$routes->post('login/verificar', 'Login::verificar');   
+$routes->post('login/verificar', 'Login::verificar');    
 $routes->get('login/logout', 'Login::logout');
 $routes->get('login/nose', 'Login::nose');
 //a

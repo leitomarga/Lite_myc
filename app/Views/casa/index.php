@@ -44,14 +44,30 @@
         }
     </style>
 
-<h1>Tu casa</h1>
 
 </head>
 
 <body>
-    
     <div class="app">
+                <div class="sidebar">
+                <div class="user">
+             <h1>Tu casa</h1>
+                <!-- <div class="user-name"><p>Bienvenido, <?php // echo $username; ?>!</p></div> -->
+                </div>
+                <div class="btn-group-vertical">
+                    
+                        <a name="" id="" class="btn" href="<?php echo base_url('casa')?>" role="button">Tu hogar</a>
+                        <a name="" id="" class="btn" href="logout" role="button">Cerrar sesión</a>
+                        <a name="" id="" class="btn" href="#" role="button">Vincula tu dispositivo</a>
+                        <a name="" id="" class="btn" href="#" role="button">Sobre el producto</a>
+                        <a name="" id="" class="btn" href="#" role="button">Manual de usuario</a>
+                        <a name="" id="" class="btn" href="<?php echo base_url('login/nose')?>"  role="button">Inicio</a>
+
+                </div>
+    </div>
     <div class="container text-center">
+       
+
         <div class="button-container">
             <a href="casa/crear" class="btn btn-info">Agregar habitación</a>
         </div>

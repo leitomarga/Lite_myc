@@ -11,6 +11,9 @@
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -162,26 +165,28 @@
         <input type="email" id="mail" name="email" placeholder="Ingrese su email">
     </div>            
     <div>
-        <span>
-            <?php 
-                if(isset($validar['email'])){
-                    echo $validar['email'];
+        
+             <?php 
+                 if (isset($validar['email']) && !empty($validar['email'])){
+                    ?><span class="badge bg-dark"><?php
+                    echo $validar['email'];?></span><?php
                 }
             ?>
-        </span>
+        
     </div>                                                                                                     
     <div class="user-box">
         <label for="password"> </label>
         <input type="password" id="pass" name="password" placeholder="Ingrese su contraseña">
     </div>
     <div>
-        <span>
+        
             <?php 
-                if(isset($validar['password'])){
-                    echo $validar['password'];
+                 if (isset($validar['password']) && !empty($validar['password'])){
+                    ?><span class="badge bg-dark"><?php
+                    echo $validar['password'];?></span><?php
                 }
             ?>
-        </span>
+        
     </div>
     <div class="user-box">
             <a href="#" id="miBoton">
