@@ -27,7 +27,7 @@
             padding: 8px;
             margin-bottom: 15px;
             border: 1px solid #ced4da;
-            border-radius: 4px;
+            border-radius: 10px;
             box-sizing: border-box;
         }
 

@@ -14,6 +14,7 @@ class Login extends BaseController
     public function __construct()
     {
         //$this->session = \Config\Services::session();
+        $this->load->library('session');
         //$this->validation = \Config\Services::validation();
     }
 
@@ -64,7 +65,7 @@ class Login extends BaseController
                 
                     $idUsuario = $usuario['id_users'];
                     $data['idUsuario'] = $idUsuario;
-
+                    
                     $sessiondata = [
                         'email'     => $email,
                         'logged_in' => true,
@@ -76,7 +77,7 @@ class Login extends BaseController
                       
                     if (session()->expires < time()) {
 
-                        echo "hola";
+                        $this->config->expiration;
                         return redirect()->to('login/logout');
 
                     }else{

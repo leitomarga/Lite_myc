@@ -28,10 +28,12 @@
             cursor: pointer;
             display: inline-block;
             transition: transform 0.2s;
+             border-radius:20px;
         }
 
         .habitacion-button:hover {
             transform: scale(1.1);
+           
         }
 
         .text-center {
