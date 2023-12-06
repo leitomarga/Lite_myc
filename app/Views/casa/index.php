@@ -15,7 +15,7 @@
     <link href="<?php echo base_url('css/style3.css');?>" rel="stylesheet">
     <script src="<?php echo base_url('css/jiji2.js');?>"></script>
 
- 
+    <script src="https://kit.fontawesome.com/be789cd132.js" crossorigin="anonymous"></script>
     <style>
         .habitacion-button {
             border: none;
@@ -43,6 +43,16 @@
 
         .button-container {
             margin-top: 20px;
+        }
+        .btnes{
+            text-decoration:none;
+            font-size:50px;
+            padding:10px;
+            color: gray;
+        }
+        .btnes:hover{
+            color:whitesmoke;
+
         }
     </style>
 
@@ -83,8 +93,8 @@
                     <button class="habitacion-button" style="background-color: <?php echo $habitacion->color; ?>;">
                         <?php echo $habitacion->nombre; ?>
                     </button>
-                    <a href="<?php echo base_url("casa/editar/{$habitacion->id_casa}"); ?>">Editar</a>
-                    <a href="<?php echo base_url("casa/eliminar/{$habitacion->id_casa}"); ?>">Eliminar</a>
+                    <a href="<?php echo base_url("casa/editar/{$habitacion->id_casa}"); ?>" class="btnes"><i class="fa-regular fa-pen-to-square"></i></a>
+                    <a href="<?php echo base_url("casa/eliminar/{$habitacion->id_casa}"); ?>" class="btnes"><i class="fa-solid fa-trash-can"></i></a>
                 <?php endforeach; ?>
             <?php endif; ?>
         </div>

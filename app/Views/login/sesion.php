@@ -23,7 +23,7 @@
                     
                         <a name="" id="" class="btn" href="<?php echo base_url('casa')?>" role="button">Tu hogar</a>
                         <a name="" id="" class="btn" href="logout" role="button">Cerrar sesión</a>
-                        <a name="" id="" class="btn" href="#" role="button">Vincula tu dispositivo</a>
+                        <a name="" id="" class="btn" href="<?php echo base_url('vinculacion')?>" role="button">Vincula tu dispositivo</a>
                         <a name="" id="" class="btn" href="#" role="button">Sobre el producto</a>
                         <a name="" id="" class="btn" href="#" role="button">Manual de usuario</a>
 

@@ -46,6 +46,7 @@ $routes->post('casa/update/(:num)', 'Casa::update/$1');
 $routes->get('casa/eliminar/(:num)', 'Casa::eliminar/$1');
 $routes->get('casa/editar/habitacion', 'Casa::update');
 $routes->get('id', 'Login::id');
+$routes->get('vinculacion', 'Login::vinculacion');
 
 
 /*
