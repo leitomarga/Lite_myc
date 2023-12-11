@@ -8,10 +8,25 @@ use Firebase\JWT\JWT;
 class Casa extends BaseController
 {
 
-    public function index()
-{
+    public function casa()
+{  
     $idUsuario = session('id_users');
     $casa = new \App\Models\Casa();
+    $habitaciones = $casa->getCasa($idUsuario);
+
+    $data = ['habitaciones' => $habitaciones];
+
+    if (empty($habitaciones)) {
+        $data['mensaje'] = 'No hay Casas.';
+    }
+
+    return view('casa/index2', $data);   
+}
+
+public function Habitacion()
+{
+    $idUsuario = session('id_users');
+    $casa = new \App\Models\Habitacion();
     $habitaciones = $casa->getHabitacion($idUsuario);
 
     $data = ['habitaciones' => $habitaciones];
@@ -23,13 +38,51 @@ class Casa extends BaseController
     return view('casa/index', $data);   
 }
 
-    public function casa()
+    public function casaCrear()
     {
         return view('casa/crear');
         
     }
 
-    public function habitacion()
+    public function guardarCasa()
+    {
+        $id_users = $this->request->getPost('idUsuario');
+        $nombre = $this->request->getPost('nombre_habitacion');
+    
+        $casaModel = new \App\Models\Casa();
+        $casas = $casaModel->getCasa($id_users);
+    
+        $id_habitacion = null;
+    
+        // Verifica si hay al menos una casa en el resultado
+        if (!empty($casas)) {
+            $id_habitacion = $casas[0]->id_habitacion;
+        }
+    
+        $data = [
+            'id_users' => $id_users,
+            'nombre' => $nombre,
+            'id_habitacion' => $id_habitacion,
+        ];
+    
+        $casaModel->insert($data);
+    
+        $habitaciones = $casaModel->getCasa($id_users);
+    
+        $data['habitaciones'] = $habitaciones;
+    
+        if (empty($habitaciones)) {
+            $data['mensaje'] = 'No hay casas vinculadas.';
+        }
+    
+        // Pasa el id_habitacion a la vista
+        $data['id_habitacion'] = $id_habitacion;
+    
+        // Puedes pasar $data a la vista y utilizar $id_habitacion en tu formulario
+        return view('casa/index2', $data);
+    }
+
+    public function guardarHabitacion()
     {
 
         $id_users = $this->request->getPost('idUsuario');
@@ -42,11 +95,11 @@ class Casa extends BaseController
             'color' => $color
         );
 
-        $casa = new \App\Models\Casa();
+        $casa = new \App\Models\Habitacion();
 
         $casa->insert($data);
 
-        $casa = new \App\Models\Casa();
+        $casa = new \App\Models\Habitacion();
         $habitaciones = $casa->getHabitacion($id_users);
         
         $data = ['habitaciones' => $habitaciones];
@@ -64,7 +117,7 @@ class Casa extends BaseController
         $idUsuario = session('id_users');
         $data['idCasa'] = $idCasa;
 
-        $casa = new \App\Models\Casa();
+        $casa = new \App\Models\Habitacion();
         $consulta = $casa->getCasa($idCasa, $idUsuario);
 
         if(empty($consulta))
@@ -89,7 +142,7 @@ class Casa extends BaseController
          $nuevoNombre = $this->request->getPost('nombre_habitacion');
          $nuevoColor = $this->request->getPost('color_habitacion');
  
-         $casa = new \App\Models\Casa();
+         $casa = new \App\Models\Habitacion();
          $casa->updateNombre($idCasa, $nuevoNombre);
          $casa->updateColor($idCasa, $nuevoColor);
 
@@ -100,7 +153,7 @@ class Casa extends BaseController
     {
         $idUsuario = session('id_users');
 
-        $casa = new \App\Models\Casa();
+        $casa = new \App\Models\Habitacion();
         $consulta = $casa->getEliminar($idCasa, $idUsuario);
 
         if (empty($consulta)) {

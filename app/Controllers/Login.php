@@ -17,19 +17,14 @@ class Login extends BaseController
         //$this->validation = \Config\Services::validation();
     }
 
-    public function vinculacion(){
-        return view('vinculacion');
-    }
+    
+   
     public function index()
     {
         
         return view('login');
-        
-            // Recibir las credenciales
-            //$macAddress = $this->request->getPost('mac');
-            //echo "La dirección MAC es: " . $macAddress;
     }
-
+    
         public function verificar()
     {
         $email = $this->request->getPost('email');

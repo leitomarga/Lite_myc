@@ -41,12 +41,21 @@
                 <span class="slider"></span>-->
                 </label>
                 </div>
+                <?php $idUsuario = session('id_users'); ?>
                 <div class="main">
                 <div class="main-header">
-                <div class="main-header__title"></div>
+                <div class="main-header__title">
+                <form action="<?php echo base_url('insertarDispositivo');?>" method="post">
+                        <input type="text" name="id_chip" placeholder="ID del dispositivo">
+                        <input type="hidden" value="<?php echo $idUsuario;?>" >
+                <?php echo $consulta;?>
+                        <input type="submit" value="Guardar">
+                        </form>
+                </div>
                 
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v6m3-3H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                 </svg></button>
+
 </div>
                 </div>
                 </div>

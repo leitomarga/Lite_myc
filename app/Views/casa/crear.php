@@ -78,20 +78,16 @@
 
 <body>
     <header>
-        <h1 class="text-center">Agregar Habitación</h1>
+        <h1 class="text-center">Agregar Casa</h1>
     </header>
     <main class="app">
       <?php $idUsuario = session('id_users'); ?>
         <div class="container">
-            <form method="POST" action="<?php echo base_url('casa/crear/habitacion'); ?>" class="form-style">
+            <form method="POST" action="<?php echo base_url('casa/crear/casa'); ?>" class="form-style">
                 <div class="mb-3">
-                    <label for="nombre_habitacion" class="form-label">Nombre de habitación:</label>
+                    <label for="nombre_habitacion" class="form-label">Nombre de casa:</label>
                     <input type="text" id="nombre_habitacion" name="nombre_habitacion"
                         placeholder="Ingrese el nombre de la habitación">
-                </div>
-                <div class="mb-3">
-                    <label for="color_habitacion" class="form-label">Color de la habitación:</label>
-                    <input type="text" id="color_habitacion" name="color_habitacion" class="color-picker">
                 </div>
                 <input type="hidden" name="idUsuario" value=<?php echo $idUsuario; ?>>
                 <input type="submit" name="boton" value="Crear" class="btn btn-primary">

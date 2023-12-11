@@ -38,15 +38,17 @@ $routes->post('login/verificar', 'Login::verificar');
 $routes->get('login/logout', 'Login::logout');
 $routes->get('login/nose', 'Login::nose');
 //a
-$routes->get('casa', 'Casa::index');
-$routes->get('casa/crear', 'Casa::casa');
+$routes->get('casa', 'Casa::casa');
+$routes->get('casa/crear', 'Casa::casaCrear');
+$routes->post('casa/crear/casa', 'Casa::guardarCasa');
 $routes->post('casa/crear/habitacion', 'Casa::habitacion');
 $routes->get('casa/editar/(:num)', 'Casa::editar/$1');
 $routes->post('casa/update/(:num)', 'Casa::update/$1');
 $routes->get('casa/eliminar/(:num)', 'Casa::eliminar/$1');
 $routes->get('casa/editar/habitacion', 'Casa::update');
 $routes->get('id', 'Login::id');
-$routes->get('vinculacion', 'Login::vinculacion');
+//a
+$routes->get('vinculacion', 'Dispositivo::vinculacion');
 
 
 /*
