@@ -10,19 +10,19 @@ class Habitacion extends Model{
     protected $allowedFields= ['id_chip','id_casa', 'nombre', 'color'];
 
 
-    public function getHabitacion($idUsuario)
+    public function getHabitacion($idCasa)
     {
         $builder = $this->db->table($this->table);
 
         $builder->select('*');
-        $builder->where('id_users', $idUsuario);
+        $builder->where('id_casa', $idCasa);
 
         $query = $builder->get();
 
         return $query->getResult();
     }
 
-    public function getCasa($idCasa, $idUsuario)
+    /*public function getCasa($idCasa, $idUsuario)
     {
         $builder = $this->db->table($this->table); 
         $builder->select('*');
@@ -31,7 +31,7 @@ class Habitacion extends Model{
         $builder->limit(1); 
     
         return $builder->get()->getRow();
-    }
+    }*/
 
     public function updateNombre($idCasa, $nuevoNombre)
     {

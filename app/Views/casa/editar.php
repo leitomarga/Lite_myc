@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Editar Habitación</title>
+    <title>Editar Casa</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -87,14 +87,9 @@
         <div class="container">
             <form method="POST" action="<?php echo base_url('casa/update/' . $consulta->id_casa); ?>" class="form-style">
                 <div class="mb-3">
-                    <label for="nombre_habitacion" class="form-label">Nombre de habitación:</label>
+                    <label for="nombre_habitacion" class="form-label">Nombre de casa:</label>
                     <input type="text" id="nombre_habitacion" name="nombre_habitacion"
                         placeholder="Ingrese el nombre de la habitación" value="<?php echo $consulta->nombre; ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="color_habitacion" class="form-label">Color de la habitación:</label>
-                    <input type="text" id="color_habitacion" name="color_habitacion" class="color-picker"
-                        value="<?php echo $consulta->color; ?>">
                 </div>
                 <input type="hidden" name="idCasa" value="<?php echo $data['idCasa']; ?>">
                 <input type="submit" name="boton" value="Editar" class="btn btn-primary">

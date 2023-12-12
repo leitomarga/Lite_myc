@@ -12,11 +12,11 @@ class Casa extends BaseController
 {  
     $idUsuario = session('id_users');
     $casa = new \App\Models\Casa();
-    $habitaciones = $casa->getCasa($idUsuario);
+    $consulta = $casa->getCasa($idUsuario);
 
-    $data = ['habitaciones' => $habitaciones];
+    $data['casas'] = $consulta;
 
-    if (empty($habitaciones)) {
+    if (empty($consulta)) {
         $data['mensaje'] = 'No hay Casas.';
     }
 
@@ -46,43 +46,30 @@ public function Habitacion()
 
     public function guardarCasa()
     {
-        $id_users = $this->request->getPost('idUsuario');
+        $idUsuario = $this->request->getPost('idUsuario');
         $nombre = $this->request->getPost('nombre_habitacion');
     
-        $casaModel = new \App\Models\Casa();
-        $casas = $casaModel->getCasa($id_users);
-    
-        $id_habitacion = null;
-    
-        // Verifica si hay al menos una casa en el resultado
-        if (!empty($casas)) {
-            $id_habitacion = $casas[0]->id_habitacion;
-        }
+        $casa = new \App\Models\Casa();
     
         $data = [
-            'id_users' => $id_users,
+            'id_users' => $idUsuario,
             'nombre' => $nombre,
-            'id_habitacion' => $id_habitacion,
         ];
+        
+        $casa->insert($data);
+        
+        $consulta = $casa->getCasa($idUsuario);
     
-        $casaModel->insert($data);
+        $data['casas'] = $consulta;
     
-        $habitaciones = $casaModel->getCasa($id_users);
-    
-        $data['habitaciones'] = $habitaciones;
-    
-        if (empty($habitaciones)) {
-            $data['mensaje'] = 'No hay casas vinculadas.';
+        if (empty($consulta)) {
+            $data['mensaje'] = 'No hay Casas.';
         }
     
-        // Pasa el id_habitacion a la vista
-        $data['id_habitacion'] = $id_habitacion;
-    
-        // Puedes pasar $data a la vista y utilizar $id_habitacion en tu formulario
         return view('casa/index2', $data);
     }
 
-    public function guardarHabitacion()
+    /*public function guardarHabitacion()
     {
 
         $id_users = $this->request->getPost('idUsuario');
@@ -110,19 +97,19 @@ public function Habitacion()
 
         return redirect()->to('casa');
 
-    }
+    }*/
 
     public function editar($idCasa)
     {
         $idUsuario = session('id_users');
         $data['idCasa'] = $idCasa;
 
-        $casa = new \App\Models\Habitacion();
-        $consulta = $casa->getCasa($idCasa, $idUsuario);
+        $casa = new \App\Models\Casa();
+        $consulta = $casa->getEditar($idCasa, $idUsuario);
 
         if(empty($consulta))
         {
-            return redirect()->to('casa/index')->with('mensaje', 'No tenés permiso para editar esta casa.');
+            echo "mal"; 
         }
         else{
 
@@ -138,22 +125,28 @@ public function Habitacion()
 
     public function update($idCasa)
     {
-         
+         $idUsuario = session('id_users');
          $nuevoNombre = $this->request->getPost('nombre_habitacion');
-         $nuevoColor = $this->request->getPost('color_habitacion');
  
-         $casa = new \App\Models\Habitacion();
+         $casa = new \App\Models\Casa();
          $casa->updateNombre($idCasa, $nuevoNombre);
-         $casa->updateColor($idCasa, $nuevoColor);
 
-         return redirect()->to('casa');
+         $consulta = $casa->getCasa($idUsuario);
+    
+        $data['casas'] = $consulta;
+    
+        if (empty($consulta)) {
+            $data['mensaje'] = 'No hay Casas.';
+        }
+    
+        return view('casa/index2', $data);
     }
 
     public function eliminar($idCasa)
     {
         $idUsuario = session('id_users');
 
-        $casa = new \App\Models\Habitacion();
+        $casa = new \App\Models\Casa();
         $consulta = $casa->getEliminar($idCasa, $idUsuario);
 
         if (empty($consulta)) {

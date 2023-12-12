@@ -81,7 +81,7 @@
        
 
         <div class="button-container">
-            <a href="casa/  crear" class="btn btn-info">Agregar casa</a> 
+            <a href="casa/crear" class="btn btn-info">Agregar casa</a> 
     </div>
         <div>
             <br>
@@ -90,18 +90,25 @@
   <p><?php echo $mensaje; ?></p>
 <?php endif; ?>
 
-<?php if (!isset($habitaciones)): ?>
+<?php if (!isset($casas)): ?>
   <?php echo "No hay casas asociadas"; ?>
 <?php endif; ?>
 
-<?php if (isset($habitaciones)): ?>
+<!-- Verifica si hay casas asociadas -->
+<?php if (!empty($casas)): ?>
   <div class="button-container">
-    <?php foreach ($habitaciones as $habitacion): ?>
-      <a href="casa/<?php echo $habitacion->id_casa; ?>" class="habitacion-button" >
-        <?php echo $habitacion->nombre; ?>
+    <!-- Itera sobre cada casa y muestra la información en un botón -->
+    <?php foreach ($casas as $casa): ?>
+        <a href="<?php echo base_url('habitacion/' . $casa->id_casa); ?>" class="btn btn-info habitacion-button">
+        <?php echo $casa->nombre; ?>
+        <a href="<?php echo base_url("casa/editar/{$casa->id_casa}"); ?>" class="btnes"><i class="fa-regular fa-pen-to-square"></i></a>
+        <a href="<?php echo base_url("casa/eliminar/{$casa->id_casa}"); ?>" class="btnes"><i class="fa-solid fa-trash-can"></i></a>
       </a>
     <?php endforeach; ?>
   </div>
+<?php else: ?>
+  <!-- Muestra un mensaje si no hay casas asociadas -->
+  <p>No hay casas asociadas</p>
 <?php endif; ?>
         </div>
     </div>

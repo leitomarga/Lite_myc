@@ -48,7 +48,7 @@
                 <form action="<?php echo base_url('insertarDispositivo');?>" method="post">
                         <input type="text" name="id_chip" placeholder="ID del dispositivo">
                         <input type="hidden" value="<?php echo $idUsuario;?>" >
-                <?php echo $consulta;?>
+                <?php echo var_dump($consulta);?>
                         <input type="submit" value="Guardar">
                         </form>
                 </div>

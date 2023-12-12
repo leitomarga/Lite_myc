@@ -50,6 +50,9 @@ $routes->get('id', 'Login::id');
 //a
 $routes->get('vinculacion', 'Dispositivo::vinculacion');
 
+$routes->get('habitacion/(:num)', 'Habitacion::index/$1');
+$routes->get('habitacion/crear/(:num)', 'Habitacion::crearHabitacion/$1');
+$routes->post('habitacion/agregar', 'Habitacion::agregarHabitacion');
 
 /*
  * --------------------------------------------------------------------

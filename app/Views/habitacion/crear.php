@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Agregar casa</title>
+    <title>Agregar Habitación</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -78,19 +78,24 @@
 
 <body>
     <header>
-        <h1 class="text-center">Agregar Casa</h1>
+        <h1 class="text-center">Agregar Habitación</h1>
     </header>
     <main class="app">
       <?php $idUsuario = session('id_users'); ?>
         <div class="container">
-            <form method="POST" action="<?php echo base_url('casa/crear/casa'); ?>" class="form-style">
+            <form method="POST" action="<?php echo base_url('habitacion/agregar'); ?>" class="form-style">
                 <div class="mb-3">
-                    <label for="nombre_habitacion" class="form-label">Nombre de casa:</label>
+                    <label for="nombre_habitacion" class="form-label">Nombre de habitación:</label>
                     <input type="text" id="nombre_habitacion" name="nombre_habitacion"
                         placeholder="Ingrese el nombre de la habitación">
                 </div>
+                <div class="mb-3">
+                    <label for="color_habitacion" class="form-label">Color de la habitación:</label>
+                    <input type="text" id="color_habitacion" name="color_habitacion" class="color-picker">
+                </div>
                 <input type="hidden" name="idUsuario" value=<?php echo $idUsuario; ?>>
-                <input type="submit" name="boton" value="Crear" class="btn btn-primary">
+                <input type="hidden" name="idCasa" value=<?php echo $idCasa; ?>>
+                <input type="submit" name="boton" value="Crear" class="btn btn-primary">    
             </form>
         </div>
     </main>

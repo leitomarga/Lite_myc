@@ -1,0 +1,599 @@
+INFO - 2023-12-12 11:10:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:10:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:10:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-12 11:10:39 --> mysqli_sql_exception: Table 'litedatabase.habitaciones' doesn't exist in C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT `casa`.*...', 0)
+#1 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `casa`.*...')
+#2 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `casa`.*...')
+#3 C:\xampp\htdocs\Lite_myc\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `casa`.*...', Array, false)
+#4 C:\xampp\htdocs\Lite_myc\app\Models\Casa.php(26): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Lite_myc\app\Controllers\Casa.php(15): App\Models\Casa->getCasa('93')
+#6 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(942): App\Controllers\Casa->casa()
+#7 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+#8 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Lite_myc\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-12 11:10:39 --> Table 'litedatabase.habitaciones' doesn't exist
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT `casa`.*, `habitaciones`.`id_habitacion`, `habitaciones`.`nombre` as `nombre_habitacion`
+FROM `casa`
+JOIN `habitaciones` ON `habitaciones`.`id_casa` = `casa`.`id_casa`
+WHERE `casa`.`id_users` = :casa.id_users:', [...], false)
+ 2 APPPATH\Models\Casa.php(26): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Casa.php(15): App\Models\Casa->getCasa('93')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:16:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:16:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:16:26 --> Call to undefined method App\Models\Casa::getHabitacion
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Dispositivo.php(11): CodeIgniter\Model->__call('getHabitacion', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dispositivo->vinculacion()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dispositivo))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:17:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:17:12 --> Object of class stdClass could not be converted to string
+in APPPATH\Views\vinculacion.php on line 51.
+ 1 SYSTEMPATH\View\View.php(228): include()
+ 2 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('vinculacion', [], true)
+ 4 APPPATH\Controllers\Dispositivo.php(15): view('vinculacion', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Dispositivo->vinculacion()
+ 6 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Dispositivo))
+ 7 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:17:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:23:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:23:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:23:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:25:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:25:38 --> Call to undefined method App\Models\Casa::getHabitacion
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Casa.php(16): CodeIgniter\Model->__call('getHabitacion', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:26:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:26:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:36:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:36:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:36:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:36:23 --> Attempt to read property "id_casa" on string
+in APPPATH\Views\casa\index2.php on line 100.
+ 1 APPPATH\Views\casa\index2.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_casa" on string', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php', 100)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index2', [], true)
+ 5 APPPATH\Controllers\Casa.php(24): view('casa/index2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:37:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:37:51 --> Attempt to read property "id_casa" on string
+in APPPATH\Views\casa\index2.php on line 100.
+ 1 APPPATH\Views\casa\index2.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_casa" on string', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php', 100)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index2', [], true)
+ 5 APPPATH\Controllers\Casa.php(24): view('casa/index2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:38:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:38:57 --> Attempt to read property "id_casa" on string
+in APPPATH\Views\casa\index2.php on line 100.
+ 1 APPPATH\Views\casa\index2.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_casa" on string', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php', 100)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index2', [], true)
+ 5 APPPATH\Controllers\Casa.php(24): view('casa/index2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:40:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:40:43 --> Attempt to read property "id_casa" on string
+in APPPATH\Views\casa\index2.php on line 100.
+ 1 APPPATH\Views\casa\index2.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_casa" on string', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php', 100)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index2', [], true)
+ 5 APPPATH\Controllers\Casa.php(24): view('casa/index2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:41:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:41:22 --> Attempt to read property "id_casa" on string
+in APPPATH\Views\casa\index2.php on line 100.
+ 1 APPPATH\Views\casa\index2.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_casa" on string', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php', 100)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index2', [], true)
+ 5 APPPATH\Controllers\Casa.php(24): view('casa/index2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:41:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:41:27 --> Attempt to read property "id_casa" on string
+in APPPATH\Views\casa\index2.php on line 100.
+ 1 APPPATH\Views\casa\index2.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_casa" on string', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php', 100)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index2', [], true)
+ 5 APPPATH\Controllers\Casa.php(24): view('casa/index2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:42:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:42:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:42:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:42:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:43:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:43:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:43:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:43:54 --> Attempt to read property "id_casa" on string
+in APPPATH\Views\casa\index2.php on line 100.
+ 1 APPPATH\Views\casa\index2.php(100): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id_casa" on string', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php', 100)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index2.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index2', [], true)
+ 5 APPPATH\Controllers\Casa.php(24): view('casa/index2', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:45:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:46:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:52:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:52:49 --> Undefined variable $id_users
+in APPPATH\Controllers\Casa.php on line 15.
+ 1 APPPATH\Controllers\Casa.php(15): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $id_users', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Controllers\\Casa.php', 15)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->casa()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:54:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:55:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:55:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:55:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 11:55:19 --> Call to undefined method App\Models\Casa::getUltimaHabitacion
+in SYSTEMPATH\Model.php on line 873.
+ 1 APPPATH\Controllers\Casa.php(55): CodeIgniter\Model->__call('getUltimaHabitacion', [...])
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->guardarCasa()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 11:58:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:58:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:58:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:58:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:58:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:59:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:59:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 11:59:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:00:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:00:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:00:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:00:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:00:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:00:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:01:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:02:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:02:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:02:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:02:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:03:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:07:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:08:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:08:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:09:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:09:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-12 12:09:41 --> mysqli_sql_exception: Unknown column 'id_users' in 'where clause' in C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Lite_myc\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Lite_myc\system\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Lite_myc\system\BaseModel.php(662): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\Lite_myc\app\Models\Habitacion.php(62): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\Lite_myc\app\Controllers\Casa.php(144): App\Models\Habitacion->getEliminar('1', '83')
+#8 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(942): App\Controllers\Casa->eliminar('1')
+#9 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+#10 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\Lite_myc\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-12-12 12:09:41 --> Unknown column 'id_users' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `habitaciones`
+WHERE `id_casa` = :id_casa:
+AND `id_users` = :id_users:
+ LIMIT 1', [...], false)
+ 2 SYSTEMPATH\Model.php(264): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(662): CodeIgniter\Model->doFirst()
+ 4 APPPATH\Models\Habitacion.php(62): CodeIgniter\BaseModel->first()
+ 5 APPPATH\Controllers\Casa.php(144): App\Models\Habitacion->getEliminar('1', '83')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->eliminar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 12:15:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:15:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:15:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:15:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:16:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:16:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-12 12:16:36 --> mysqli_sql_exception: Unknown column 'id_users' in 'where clause' in C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Lite_myc\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Lite_myc\app\Models\Habitacion.php(33): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Lite_myc\app\Controllers\Casa.php(108): App\Models\Habitacion->getCasa('7', '83')
+#6 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(942): App\Controllers\Casa->editar('7')
+#7 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+#8 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Lite_myc\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-12 12:16:36 --> Unknown column 'id_users' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `habitaciones`
+WHERE `id_casa` = :id_casa:
+AND `id_users` = :id_users:
+ LIMIT 1', [...], false)
+ 2 APPPATH\Models\Habitacion.php(33): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Casa.php(108): App\Models\Habitacion->getCasa('7', '83')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->editar('7')
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 12:16:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:51:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:51:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:52:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:52:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:52:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:52:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:52:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:53:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:53:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:54:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:54:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:59:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:59:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:59:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:59:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 12:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:00:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:00:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:00:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:00:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:01:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:01:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 13:01:11 --> Undefined variable $idUsuario
+in APPPATH\Controllers\Casa.php on line 134.
+ 1 APPPATH\Controllers\Casa.php(134): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idUsuario', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Controllers\\Casa.php', 134)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->update('7')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 13:01:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:01:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 13:01:39 --> Too few arguments to function App\Models\Habitacion::getCasa(), 1 passed in C:\xampp\htdocs\Lite_myc\app\Controllers\Casa.php on line 134 and exactly 2 expected
+in APPPATH\Models\Habitacion.php on line 25.
+ 1 APPPATH\Controllers\Casa.php(134): App\Models\Habitacion->getCasa('83')
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Casa->update('7')
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Casa))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 13:03:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:03:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:04:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:04:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:05:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:05:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:05:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:05:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:05:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:13:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:16:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 13:16:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 13:16:56 --> Undefined variable $casa
+in APPPATH\Controllers\Habitacion.php on line 10.
+ 1 APPPATH\Controllers\Habitacion.php(10): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $casa', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Controllers\\Habitacion.php', 10)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 13:17:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-12-12 13:17:09 --> mysqli_sql_exception: Unknown column 'id_users' in 'where clause' in C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php:306
+Stack trace:
+#0 C:\xampp\htdocs\Lite_myc\system\Database\MySQLi\Connection.php(306): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(693): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\Lite_myc\system\Database\BaseConnection.php(607): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\Lite_myc\system\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\Lite_myc\app\Models\Habitacion.php(20): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\Lite_myc\app\Controllers\Habitacion.php(10): App\Models\Habitacion->getHabitacion('83')
+#6 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+#7 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+#8 C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\Lite_myc\public\index.php(79): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-12-12 13:17:09 --> Unknown column 'id_users' in 'where clause'
+in SYSTEMPATH\Database\BaseConnection.php on line 647.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1615): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `habitaciones`
+WHERE `id_users` = :id_users:', [...], false)
+ 2 APPPATH\Models\Habitacion.php(20): CodeIgniter\Database\BaseBuilder->get()
+ 3 APPPATH\Controllers\Habitacion.php(10): App\Models\Habitacion->getHabitacion('83')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:24:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:24:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:24:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:24:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 14:24:54 --> Undefined variable $idCasa
+in APPPATH\Controllers\Habitacion.php on line 8.
+ 1 APPPATH\Controllers\Habitacion.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idCasa', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Controllers\\Habitacion.php', 8)
+ 2 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 3 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 4 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 14:25:34 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:33:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:33:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 14:33:20 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 14:33:29 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:33:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:33:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:33:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:34:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 14:34:15 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:35:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 14:35:11 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 14:35:35 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:35:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:35:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 14:35:41 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:35:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:37:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:37:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:37:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 14:37:16 --> Too few arguments to function App\Controllers\Habitacion::index(), 0 passed in C:\xampp\htdocs\Lite_myc\system\CodeIgniter.php on line 942 and exactly 1 expected
+in APPPATH\Controllers\Habitacion.php on line 6.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 14:38:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:38:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:38:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:39:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:39:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:39:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:39:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:39:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:39:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:40:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:41:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:41:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:41:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:41:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:41:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:42:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:42:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 14:54:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:02:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:02:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:06:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:06:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:10:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:54:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:54:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:54:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 15:55:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:06:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 16:06:19 --> unlink(C:\xampp\htdocs\Lite_myc\writable\debugbar/debugbar_1702392881.820306.json): No such file or directory
+in SYSTEMPATH\Debug\Toolbar\Collectors\History.php on line 80.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler(2, 'unlink(C:\\xampp\\htdocs\\Lite_myc\\writable\\debugbar/debugbar_1702392881.820306.json): No such file or directory', 'C:\\xampp\\htdocs\\Lite_myc\\system\\Debug\\Toolbar\\Collectors\\History.php', 80)
+ 2 SYSTEMPATH\Debug\Toolbar\Collectors\History.php(80): unlink('C:\\xampp\\htdocs\\Lite_myc\\writable\\debugbar/debugbar_1702392881.820306.json')
+ 3 SYSTEMPATH\Debug\Toolbar.php(499): CodeIgniter\Debug\Toolbar\Collectors\History->setFiles('1702397178.585712', 20)
+ 4 SYSTEMPATH\Debug\Toolbar.php(476): CodeIgniter\Debug\Toolbar->format([...], 'html')
+ 5 APPPATH\Config\Events.php(47): CodeIgniter\Debug\Toolbar->respond()
+ 6 SYSTEMPATH\Events\Events.php(154): CodeIgniter\Events\Events::Config\{closure}()
+ 7 SYSTEMPATH\CodeIgniter.php(442): CodeIgniter\Events\Events::trigger('pre_system')
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 16:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:06:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:06:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:06:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:06:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:11:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 16:12:03 --> Undefined variable $habitacion
+in APPPATH\Views\casa\index.php on line 84.
+ 1 APPPATH\Views\casa\index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $habitacion', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php', 84)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index', [], true)
+ 5 APPPATH\Controllers\Habitacion.php(18): view('casa/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index('7')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:12:22 --> Undefined variable $habitacion
+in APPPATH\Views\casa\index.php on line 84.
+ 1 APPPATH\Views\casa\index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $habitacion', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php', 84)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index', [], true)
+ 5 APPPATH\Controllers\Habitacion.php(18): view('casa/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index('7')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:12:28 --> Undefined variable $habitacion
+in APPPATH\Views\casa\index.php on line 84.
+ 1 APPPATH\Views\casa\index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $habitacion', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php', 84)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index', [], true)
+ 5 APPPATH\Controllers\Habitacion.php(18): view('casa/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index('7')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 16:12:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:12:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 16:12:34 --> Undefined variable $habitacion
+in APPPATH\Views\casa\index.php on line 84.
+ 1 APPPATH\Views\casa\index.php(84): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $habitacion', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php', 84)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\casa\\index.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('casa/index', [], true)
+ 5 APPPATH\Controllers\Habitacion.php(18): view('casa/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->index('7')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 16:33:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:33:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:33:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:34:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 16:34:55 --> Undefined variable $idCasa
+in APPPATH\Views\habitacion\crear.php on line 97.
+ 1 APPPATH\Views\habitacion\crear.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $idCasa', 'C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\habitacion\\crear.php', 97)
+ 2 SYSTEMPATH\View\View.php(228): include('C:\\xampp\\htdocs\\Lite_myc\\app\\Views\\habitacion\\crear.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('habitacion/crear', [], true)
+ 5 APPPATH\Controllers\Habitacion.php(24): view('habitacion/crear')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->crearHabitacion('7')
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 16:35:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:36:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:36:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:38:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:38:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:38:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-12-12 16:40:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-12-12 16:40:46 --> Class "App\Controllers\App\Models\Habitacion" not found
+in APPPATH\Controllers\Habitacion.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->agregarHabitacion()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-12-12 16:42:01 --> Class "App\Controllers\App\Models\Habitacion" not found
+in APPPATH\Controllers\Habitacion.php on line 34.
+ 1 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\Habitacion->agregarHabitacion()
+ 2 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Habitacion))
+ 3 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+INFO - 2023-12-12 16:43:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

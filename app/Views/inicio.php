@@ -33,7 +33,8 @@
     <div role="button">
     <span class="glow"></span>
     <div >
-        <span >L i t e</span>
+        <span >L </span>
+        i t e
     </div>
     </div> 
 

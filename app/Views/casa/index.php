@@ -63,7 +63,7 @@
         <div class="app">
                     <div class="sidebar">
                     <div class="user">
-                <h1>Tu casa</h1>
+                <h2>Habitaciones</h2>
                     <!-- <div class="user-name"><p>Bienvenido, <?php // echo $username; ?>!</p></div> -->
                     </div>
                     <div class="btn-group-vertical">
@@ -81,15 +81,16 @@
         
 
             <div class="button-container">
-                <a href="casa/crear" class="btn btn-info">Agregar habitación</a>
+                <!--<a href="<?php // echo base_url("crear/{$habitacion->id_casa}"); ?>" class="btn btn-info">Agregar habitación</a> -->
             </div>
             <div>
-                <br>
-                <br>
                 <?php if (isset($mensaje)): ?>
                     <p><?php echo $mensaje; ?></p>
                 <?php else: ?>
                     <?php foreach ($habitaciones as $habitacion): ?>
+                        <div class="button-container">
+                <a href="<?php echo base_url("habitacion/crear/{$habitacion->id_casa}"); ?>" class="btn btn-info">Agregar habitación</a>
+            </div>
                         <button class="habitacion-button" style="background-color: <?php echo $habitacion->color; ?>;">
                             <?php echo $habitacion->nombre; ?>
                         </button>
