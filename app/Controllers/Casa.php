@@ -69,36 +69,6 @@ public function Habitacion()
         return view('casa/index2', $data);
     }
 
-    /*public function guardarHabitacion()
-    {
-
-        $id_users = $this->request->getPost('idUsuario');
-        $nombre = $this->request->getPost('nombre_habitacion');
-        $color = $this->request->getPost('color_habitacion');
-
-        $data = array(
-            'id_users' => $id_users,
-            'nombre' => $nombre,
-            'color' => $color
-        );
-
-        $casa = new \App\Models\Habitacion();
-
-        $casa->insert($data);
-
-        $casa = new \App\Models\Habitacion();
-        $habitaciones = $casa->getHabitacion($id_users);
-        
-        $data = ['habitaciones' => $habitaciones];
-    
-        if (empty($habitaciones)) {
-            $data['mensaje'] = 'No hay habitaciones disponibles.';
-        }
-
-        return redirect()->to('casa');
-
-    }*/
-
     public function editar($idCasa)
     {
         $idUsuario = session('id_users');

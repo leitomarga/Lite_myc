@@ -22,16 +22,18 @@ class Habitacion extends Model{
         return $query->getResult();
     }
 
-    /*public function getCasa($idCasa, $idUsuario)
-    {
-        $builder = $this->db->table($this->table); 
-        $builder->select('*');
-        $builder->where('id_casa', $idCasa);
-        $builder->where('id_users', $idUsuario);
-        $builder->limit(1); 
+    public function updateHabitacion($idHabitacion, $nuevoNombre, $nuevoColor)
+{
+    $data = [
+        'nombre' => $nuevoNombre,
+        'color'  => $nuevoColor,
+    ];
+
+    $this->where('id_habitacion', $idHabitacion);
+    $this->set($data);
+    $this->update();
+}
     
-        return $builder->get()->getRow();
-    }*/
 
     public function updateNombre($idCasa, $nuevoNombre)
     {

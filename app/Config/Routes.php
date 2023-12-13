@@ -53,6 +53,8 @@ $routes->get('vinculacion', 'Dispositivo::vinculacion');
 $routes->get('habitacion/(:num)', 'Habitacion::index/$1');
 $routes->get('habitacion/crear/(:num)', 'Habitacion::crearHabitacion/$1');
 $routes->post('habitacion/agregar', 'Habitacion::agregarHabitacion');
+$routes->get('habitacion/editar/(:num)', 'Habitacion::editarHabitacion/$1');
+$routes->post('habitacion/update/(:num)', 'Habitacion::updateHabitacion');
 
 /*
  * --------------------------------------------------------------------

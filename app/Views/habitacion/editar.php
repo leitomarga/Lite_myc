@@ -80,18 +80,22 @@
 
 <body>
     <header>
-        <h1 class="text-center">Editar Casa</h1>
+        <h1 class="text-center">Editar Habitación</h1>
     </header>
     <main class="app">
         <?php $idUsuario = session('id_users'); ?>
         <div class="container">
-            <form method="POST" action="<?php echo base_url('casa/update/' . $consulta->id_casa); ?>" class="form-style">
+        <form method="POST" action="<?php echo base_url('habitacion/update/' . $consulta[0]->id_habitacion); ?>" class="form-style">
                 <div class="mb-3">
                     <label for="nombre_habitacion" class="form-label">Nombre de casa:</label>
                     <input type="text" id="nombre_habitacion" name="nombre_habitacion"
-                        placeholder="Ingrese el nombre de la habitación" value="<?php echo $consulta->nombre; ?>">
+                        placeholder="Ingrese el nombre de la habitación" value="<?php echo $consulta[0]->nombre; ?>">
                 </div>
+                <input type="color" id="color_habitacion" name="color_habitacion" 
+                       placeholder="Ingrese el color de su habitación" value="<?php echo $consulta[0]->color; ?>">
+                       
                 <input type="hidden" name="idCasa" value="<?php echo $data['idCasa']; ?>">
+                <input type="hidden" name="idHabitacion" value="<?php echo $consulta[0]->id_habitacion; ?>">
                 <input type="submit" name="boton" value="Editar" class="btn btn-primary">
             </form>
         </div>

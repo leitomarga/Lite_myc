@@ -18,7 +18,7 @@ class Casa extends Model{
 
     public function getCasa($idUsuario)
     {   
-        $builder = $this->db->table($this->table); // Reemplaza 'nombre_de_tu_tabla' con el nombre real de tu tabla
+        $builder = $this->db->table($this->table);
         $builder->select('*');
         $builder->where('id_users', $idUsuario);
         return $builder->get()->getResult();
