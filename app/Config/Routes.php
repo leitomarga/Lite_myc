@@ -56,6 +56,9 @@ $routes->post('habitacion/agregar', 'Habitacion::agregarHabitacion');
 $routes->get('habitacion/editar/(:num)', 'Habitacion::editarHabitacion/$1');
 $routes->post('habitacion/update/(:num)', 'Habitacion::updateHabitacion');
 
+//nodemcu
+$routes->get('api/insertMac/(:any)', 'Api::insertMac/$1');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
